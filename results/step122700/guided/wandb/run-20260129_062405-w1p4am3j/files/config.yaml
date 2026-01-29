@@ -1,0 +1,99 @@
+_wandb:
+    value:
+        cli_version: 0.24.0
+        e:
+            bakqfhrrym55f62mps781e7xztim3ha0:
+                args:
+                    - --checkpoint
+                    - logs/D4RL/pointmaze/umaze-v2/checkpoint_step_122700.pt
+                    - --dataset
+                    - D4RL/pointmaze/umaze-v2
+                    - --env
+                    - PointMaze_UMaze-v3
+                    - --policy-type
+                    - guided
+                    - --n-episodes
+                    - "10"
+                    - --sampling-timesteps
+                    - "500"
+                    - --results-dir
+                    - results/step122700/guided
+                    - --video-dir
+                    - videos/step122700/guided
+                    - --render
+                    - video
+                    - --device
+                    - cuda
+                codePath: scripts/evaluate.py
+                codePathLocal: scripts/evaluate.py
+                cpu_count: 1
+                cpu_count_logical: 1
+                cudaVersion: "12.4"
+                disk:
+                    /:
+                        total: "67387613184"
+                        used: "24637587456"
+                email: ge64liv@mytum.de
+                executable: /home/pijet/miniconda3/envs/dadiff/bin/python
+                git:
+                    commit: 24303dfc0d91ef4119dd48994cc0e9a9c8a13811
+                    remote: https://github.com/IvanaPijetlovic/pointmaze_with_diffusion.git
+                gpu: Tesla T4
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Turing
+                      cudaCores: 2560
+                      memoryTotal: "16106127360"
+                      name: Tesla T4
+                      uuid: GPU-7e829fc3-e806-f100-ac86-d17c33447365
+                host: instance-20260128-151357
+                memory:
+                    total: "3851362304"
+                os: Linux-6.1.0-42-cloud-amd64-x86_64-with-glibc2.36
+                program: /home/pijet/pointmaze_with_diffusion/scripts/evaluate.py
+                python: CPython 3.10.19
+                root: results/step122700/guided
+                startedAt: "2026-01-29T06:24:05.535852Z"
+                writerId: bakqfhrrym55f62mps781e7xztim3ha0
+        m: []
+        python_version: 3.10.19
+        t:
+            "1":
+                - 1
+                - 105
+            "2":
+                - 1
+                - 105
+            "3":
+                - 13
+                - 16
+            "4": 3.10.19
+            "5": 0.24.0
+            "10":
+                - 20
+            "12": 0.24.0
+            "13": linux-x86_64
+action_horizon:
+    value: 16
+checkpoint:
+    value: logs/D4RL/pointmaze/umaze-v2/checkpoint_step_122700.pt
+dataset:
+    value: D4RL/pointmaze/umaze-v2
+device:
+    value: cuda
+env:
+    value: PointMaze_UMaze-v3
+n_episodes:
+    value: 10
+policy_type:
+    value: guided
+render:
+    value: video
+results_dir:
+    value: results/step122700/guided
+sampling_timesteps:
+    value: 500
+seed:
+    value: 42
+video_dir:
+    value: videos/step122700/guided

@@ -1,0 +1,11 @@
+{"time":"2026-01-29T06:19:10.1003894Z","level":"INFO","msg":"stream: starting","core version":"0.24.0"}
+{"time":"2026-01-29T06:19:10.424979145Z","level":"INFO","msg":"stream: created new stream","id":"gooamplw"}
+{"time":"2026-01-29T06:19:10.425098835Z","level":"INFO","msg":"stream: started","id":"gooamplw"}
+{"time":"2026-01-29T06:19:10.425362317Z","level":"INFO","msg":"handler: started","stream_id":"gooamplw"}
+{"time":"2026-01-29T06:19:10.425391371Z","level":"INFO","msg":"writer: started","stream_id":"gooamplw"}
+{"time":"2026-01-29T06:19:10.425407919Z","level":"INFO","msg":"sender: started","stream_id":"gooamplw"}
+{"time":"2026-01-29T06:19:11.250898549Z","level":"INFO","msg":"stream: closing","id":"gooamplw"}
+{"time":"2026-01-29T06:19:12.155224281Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-01-29T06:19:12.397499998Z","level":"INFO","msg":"handler: closed","stream_id":"gooamplw"}
+{"time":"2026-01-29T06:19:12.397559997Z","level":"INFO","msg":"sender: closed","stream_id":"gooamplw"}
+{"time":"2026-01-29T06:19:12.39758498Z","level":"INFO","msg":"stream: closed","id":"gooamplw"}

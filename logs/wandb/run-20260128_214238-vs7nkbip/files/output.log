@@ -1,0 +1,112 @@
+Config saved: logs/D4RL/pointmaze/umaze-v2/config.json
+
+Loading dataset...
+Dataset size: 628444
+Observation dim: 8
+Action dim: 2
+Transition dim: 10
+
+Creating model...
+Model parameters: 15,864,074
+Model config: {'dim': 128, 'dim_mults': [1, 2, 4], 'n_timesteps': 100, 'beta_schedule': 'cosine', 'horizon': 32}
+
+Loss components: ['diffusion']
+
+Starting training...
+Epoch 1/50:  60%|███████████████████████████████████████████████████████████████▏                                         | 1476/2454 [02:37<01:44,  9.38it/s, diffusion=0.0621, lr=6.00e-04]
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 493, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 468, in main
+    for epoch, metrics in trainer.train(args.n_epochs, start_epoch=start_epoch, yield_metrics=True):
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/utils/training.py", line 243, in train
+    loss_dict = self.train_step(batch)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/utils/training.py", line 153, in train_step
+    loss, loss_dict = self.compute_loss(batch)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/utils/training.py", line 133, in compute_loss
+    loss_output = self.loss_fn(batch)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/losses/__init__.py", line 35, in forward
+    return self.weight * self.compute(batch)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/losses/__init__.py", line 48, in compute
+    return self.diffusion.loss(trajectories)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/models/diffusion.py", line 276, in loss
+    model_output = self.model(x_noisy, t)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/models/temporal_unet.py", line 219, in forward
+    x = resnet1(x, t)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/models/temporal_unet.py", line 117, in forward
+    out = out + self.time_mlp(t)[:, :, None]
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 517, in forward
+    return F.mish(input, inplace=self.inplace)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/functional.py", line 2415, in mish
+    return torch._C._nn.mish(input)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 493, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 468, in main
+    for epoch, metrics in trainer.train(args.n_epochs, start_epoch=start_epoch, yield_metrics=True):
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/utils/training.py", line 243, in train
+    loss_dict = self.train_step(batch)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/utils/training.py", line 153, in train_step
+    loss, loss_dict = self.compute_loss(batch)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/utils/training.py", line 133, in compute_loss
+    loss_output = self.loss_fn(batch)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/losses/__init__.py", line 35, in forward
+    return self.weight * self.compute(batch)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/losses/__init__.py", line 48, in compute
+    return self.diffusion.loss(trajectories)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/models/diffusion.py", line 276, in loss
+    model_output = self.model(x_noisy, t)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/models/temporal_unet.py", line 219, in forward
+    x = resnet1(x, t)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/models/temporal_unet.py", line 117, in forward
+    out = out + self.time_mlp(t)[:, :, None]
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 517, in forward
+    return F.mish(input, inplace=self.inplace)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/functional.py", line 2415, in mish
+    return torch._C._nn.mish(input)
+KeyboardInterrupt

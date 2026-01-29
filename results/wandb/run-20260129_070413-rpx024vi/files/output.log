@@ -1,0 +1,72 @@
+============================================================
+Evaluating Diffuser Model
+============================================================
+Checkpoint: logs/D4RL/pointmaze/umaze-v2/checkpoint_step_122700.pt
+Environment: PointMaze_UMaze-v3
+Policy type: guided
+Device: cuda
+============================================================
+✓ Found 'config' in checkpoint
+Loading model weights...
+✓ Model loaded successfully!
+
+✓ Using 200 sampling timesteps for inference (trained with 100)
+✓ Created GuidedPolicy
+✓ Created environment: PointMaze_UMaze-v3
+
+============================================================
+Running 10 evaluation episodes...
+============================================================
+
+
+Episode 1: start=[ 0.81405682 -1.02480703], goal=[1.13056985 0.14303215]
+  Initial distance to goal: 1.210
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 440, in main
+    metrics = evaluate_policy(policy, env, args.n_episodes)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 240, in evaluate_policy
+    action = policy.get_action(obs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 220, in get_action
+    trajectory = self.sample_loop(batch_size=1, conditions=conditions, verbose=False)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 147, in sample_loop
+    x = self.p_sample_with_guidance(x, t, conditions)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 84, in p_sample_with_guidance
+    model_mean, model_log_variance = self.diffusion.p_mean_variance(x, t)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/models/diffusion.py", line 200, in p_mean_variance
+    x_recon = torch.clamp(x_recon, -1.0, 1.0)
+torch.AcceleratorError: CUDA error: device-side assert triggered
+Search for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 440, in main
+    metrics = evaluate_policy(policy, env, args.n_episodes)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 240, in evaluate_policy
+    action = policy.get_action(obs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 220, in get_action
+    trajectory = self.sample_loop(batch_size=1, conditions=conditions, verbose=False)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 147, in sample_loop
+    x = self.p_sample_with_guidance(x, t, conditions)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 84, in p_sample_with_guidance
+    model_mean, model_log_variance = self.diffusion.p_mean_variance(x, t)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/models/diffusion.py", line 200, in p_mean_variance
+    x_recon = torch.clamp(x_recon, -1.0, 1.0)
+torch.AcceleratorError: CUDA error: device-side assert triggered
+Search for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.

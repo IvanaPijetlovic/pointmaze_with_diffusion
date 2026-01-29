@@ -1,0 +1,44 @@
+============================================================
+Evaluating Diffuser Model
+============================================================
+Checkpoint: logs/D4RL/pointmaze/umaze-v2/checkpoint_step_122700.pt
+Environment: PointMaze_UMaze-v3
+Policy type: guided
+Device: cuda
+============================================================
+✓ Found 'config' in checkpoint
+Loading model weights...
+✓ Model loaded successfully!
+
+✓ Using 500 sampling timesteps for inference (trained with 100)
+✓ Created GuidedPolicy
+Traceback (most recent call last):
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gymnasium/wrappers/rendering.py", line 313, in __init__
+    import moviepy  # noqa: F401
+ModuleNotFoundError: No module named 'moviepy'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 428, in main
+    env = RecordVideo(env, args.video_dir, episode_trigger=lambda x: True)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gymnasium/wrappers/rendering.py", line 315, in __init__
+    raise error.DependencyNotInstalled(
+gymnasium.error.DependencyNotInstalled: MoviePy is not installed, run `pip install "gymnasium[other]"`
+Traceback (most recent call last):
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gymnasium/wrappers/rendering.py", line 313, in __init__
+    import moviepy  # noqa: F401
+ModuleNotFoundError: No module named 'moviepy'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 428, in main
+    env = RecordVideo(env, args.video_dir, episode_trigger=lambda x: True)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gymnasium/wrappers/rendering.py", line 315, in __init__
+    raise error.DependencyNotInstalled(
+gymnasium.error.DependencyNotInstalled: MoviePy is not installed, run `pip install "gymnasium[other]"`

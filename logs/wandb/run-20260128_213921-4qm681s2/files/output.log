@@ -1,0 +1,56 @@
+Config saved: logs/D4RL/pointmaze/umaze-v2/config.json
+
+Loading dataset...
+Dataset size: 628444
+Observation dim: 8
+Action dim: 2
+Transition dim: 10
+
+Creating model...
+Model parameters: 15,864,074
+Model config: {'dim': 128, 'dim_mults': [1, 2, 4], 'n_timesteps': 100, 'beta_schedule': 'cosine', 'horizon': 32}
+
+Loss components: ['diffusion']
+
+Starting training...
+Epoch 1/50:   0%|                                                                                                                                                   | 0/2454 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 493, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 468, in main
+    for epoch, metrics in trainer.train(args.n_epochs, start_epoch=start_epoch, yield_metrics=True):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/utils/training.py", line 243, in train
+    loss_dict = self.train_step(batch)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/utils/training.py", line 153, in train_step
+    loss, loss_dict = self.compute_loss(batch)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/utils/training.py", line 133, in compute_loss
+    loss_output = self.loss_fn(batch)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/losses/__init__.py", line 35, in forward
+    return self.weight * self.compute(batch)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/losses/__init__.py", line 47, in compute
+    trajectories = batch['conditions']
+KeyError: 'conditions'
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 493, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 468, in main
+    for epoch, metrics in trainer.train(args.n_epochs, start_epoch=start_epoch, yield_metrics=True):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/utils/training.py", line 243, in train
+    loss_dict = self.train_step(batch)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/utils/training.py", line 153, in train_step
+    loss, loss_dict = self.compute_loss(batch)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/utils/training.py", line 133, in compute_loss
+    loss_output = self.loss_fn(batch)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/losses/__init__.py", line 35, in forward
+    return self.weight * self.compute(batch)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/losses/__init__.py", line 47, in compute
+    trajectories = batch['conditions']
+KeyError: 'conditions'

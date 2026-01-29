@@ -1,0 +1,27 @@
+============================================================
+Evaluating Diffuser Model
+============================================================
+Checkpoint: logs/D4RL/pointmaze/umaze-v2/checkpoint_step_122700.pt
+Environment: PointMaze_UMaze-v3
+Policy type: guided
+Device: cuda
+============================================================
+✓ Found 'config' in checkpoint
+Loading model weights...
+✓ Model loaded successfully!
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 361, in main
+    diffusion, normalizer = load_model(args.checkpoint, dataset_name, args.device)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 206, in load_model
+    return diffusion, dataset.normalizer
+AttributeError: 'SequenceDataset' object has no attribute 'normalizer'. Did you mean: 'normalize_obs'?
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 361, in main
+    diffusion, normalizer = load_model(args.checkpoint, dataset_name, args.device)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 206, in load_model
+    return diffusion, dataset.normalizer
+AttributeError: 'SequenceDataset' object has no attribute 'normalizer'. Did you mean: 'normalize_obs'?

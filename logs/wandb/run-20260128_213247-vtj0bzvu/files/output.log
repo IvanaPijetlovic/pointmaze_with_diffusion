@@ -1,0 +1,25 @@
+Config saved: logs/D4RL/pointmaze/umaze-v2/config.json
+
+Loading dataset...
+Dataset size: 628444
+Observation dim: 8
+Action dim: 2
+Transition dim: 10
+
+Creating model...
+Model parameters: 15,864,074
+Model config: {'dim': 128, 'dim_mults': [1, 2, 4], 'n_timesteps': 100, 'beta_schedule': 'cosine', 'horizon': 32}
+
+Loss components: ['diffusion']
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 493, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 442, in main
+    trainer = Trainer(
+TypeError: Trainer.__init__() got an unexpected keyword argument 'wandb_run'
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 493, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 442, in main
+    trainer = Trainer(
+TypeError: Trainer.__init__() got an unexpected keyword argument 'wandb_run'

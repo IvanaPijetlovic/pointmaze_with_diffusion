@@ -1,0 +1,62 @@
+{
+  "os": "Linux-6.1.0-42-cloud-amd64-x86_64-with-glibc2.36",
+  "python": "CPython 3.10.19",
+  "startedAt": "2026-01-29T06:38:53.545880Z",
+  "args": [
+    "--checkpoint",
+    "logs/D4RL/pointmaze/umaze-v2/checkpoint_step_122700.pt",
+    "--dataset",
+    "D4RL/pointmaze/umaze-v2",
+    "--env",
+    "PointMaze_UMaze-v3",
+    "--policy-type",
+    "guided",
+    "--n-episodes",
+    "10",
+    "--sampling-timesteps",
+    "500",
+    "--results-dir",
+    "results/step122700/guided",
+    "--video-dir",
+    "videos/step122700/guided",
+    "--render",
+    "video",
+    "--device",
+    "cuda"
+  ],
+  "program": "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py",
+  "codePath": "scripts/evaluate.py",
+  "codePathLocal": "scripts/evaluate.py",
+  "git": {
+    "remote": "https://github.com/IvanaPijetlovic/pointmaze_with_diffusion.git",
+    "commit": "24303dfc0d91ef4119dd48994cc0e9a9c8a13811"
+  },
+  "email": "ge64liv@mytum.de",
+  "root": "results/step122700/guided",
+  "host": "instance-20260128-151357",
+  "executable": "/home/pijet/miniconda3/envs/dadiff/bin/python",
+  "cpu_count": 1,
+  "cpu_count_logical": 1,
+  "gpu": "Tesla T4",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "67387613184",
+      "used": "25110011904"
+    }
+  },
+  "memory": {
+    "total": "3851362304"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "Tesla T4",
+      "memoryTotal": "16106127360",
+      "cudaCores": 2560,
+      "architecture": "Turing",
+      "uuid": "GPU-7e829fc3-e806-f100-ac86-d17c33447365"
+    }
+  ],
+  "cudaVersion": "12.4",
+  "writerId": "v8dbuplsxbz4dcy5px7h9d9fcvh81rr1"
+}

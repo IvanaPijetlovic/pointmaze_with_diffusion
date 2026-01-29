@@ -1,0 +1,1 @@
+{"_timestamp":1.7696776280636227e+09,"_wandb":{"runtime":6521},"_runtime":6521,"std_reward":166.6248480869525,"episode_lengths":[1000,1000,1000,1000,1000,1000,1000,1000,1000,1000],"_step":0,"mean_length":1000,"episode_rewards":[466,189,294,0,0,248,92,466,378,113],"std_length":0,"mean_reward":224.6}

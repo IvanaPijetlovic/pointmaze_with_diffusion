@@ -1,0 +1,124 @@
+============================================================
+Evaluating Diffuser Model
+============================================================
+Checkpoint: logs/D4RL/pointmaze/umaze-v2/checkpoint_step_122700.pt
+Environment: PointMaze_UMaze-v3
+Policy type: guided
+Device: cuda
+============================================================
+✓ Found 'config' in checkpoint
+Loading model weights...
+✓ Model loaded successfully!
+
+✓ Using 100 sampling timesteps for inference (trained with 100)
+✓ Created GuidedPolicy
+Recording videos to: videos/step122700/guided_t100
+✓ Created environment: PointMaze_UMaze-v3
+
+============================================================
+Running 10 evaluation episodes...
+============================================================
+
+
+Episode 1: start=[ 0.81405682 -1.02480703], goal=[1.13056985 0.14303215]
+  Initial distance to goal: 1.210
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 440, in main
+    metrics = evaluate_policy(policy, env, args.n_episodes)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 240, in evaluate_policy
+    action = policy.get_action(obs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 220, in get_action
+    trajectory = self.sample_loop(batch_size=1, conditions=conditions, verbose=False)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 147, in sample_loop
+    x = self.p_sample_with_guidance(x, t, conditions)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 84, in p_sample_with_guidance
+    model_mean, model_log_variance = self.diffusion.p_mean_variance(x, t)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/models/diffusion.py", line 190, in p_mean_variance
+    model_output = self.model(x, t)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/models/temporal_unet.py", line 225, in forward
+    x = self.mid_block1(x, t)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/models/temporal_unet.py", line 114, in forward
+    out = self.blocks[0](x)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/models/temporal_unet.py", line 76, in forward
+    return self.block(x)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/normalization.py", line 326, in forward
+    def forward(self, input: Tensor) -> Tensor:
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 440, in main
+    metrics = evaluate_policy(policy, env, args.n_episodes)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 240, in evaluate_policy
+    action = policy.get_action(obs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 220, in get_action
+    trajectory = self.sample_loop(batch_size=1, conditions=conditions, verbose=False)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 147, in sample_loop
+    x = self.p_sample_with_guidance(x, t, conditions)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 84, in p_sample_with_guidance
+    model_mean, model_log_variance = self.diffusion.p_mean_variance(x, t)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/models/diffusion.py", line 190, in p_mean_variance
+    model_output = self.model(x, t)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/models/temporal_unet.py", line 225, in forward
+    x = self.mid_block1(x, t)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/models/temporal_unet.py", line 114, in forward
+    out = self.blocks[0](x)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/models/temporal_unet.py", line 76, in forward
+    return self.block(x)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/nn/modules/normalization.py", line 326, in forward
+    def forward(self, input: Tensor) -> Tensor:
+KeyboardInterrupt

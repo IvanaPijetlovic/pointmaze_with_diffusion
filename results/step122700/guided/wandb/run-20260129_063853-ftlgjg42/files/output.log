@@ -1,0 +1,46 @@
+============================================================
+Evaluating Diffuser Model
+============================================================
+Checkpoint: logs/D4RL/pointmaze/umaze-v2/checkpoint_step_122700.pt
+Environment: PointMaze_UMaze-v3
+Policy type: guided
+Device: cuda
+============================================================
+✓ Found 'config' in checkpoint
+Loading model weights...
+✓ Model loaded successfully!
+
+✓ Using 500 sampling timesteps for inference (trained with 100)
+✓ Created GuidedPolicy
+/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gymnasium/wrappers/rendering.py:293: UserWarning: [33mWARN: Overwriting existing videos at /home/pijet/pointmaze_with_diffusion/videos/step122700/guided folder (try specifying a different `video_folder` for the `RecordVideo` wrapper if this is not desired)[0m
+  logger.warn(
+Recording videos to: videos/step122700/guided
+✓ Created environment: PointMaze_UMaze-v3
+
+============================================================
+Running 10 evaluation episodes...
+============================================================
+
+
+Episode 1: start=[ 0.81405682 -1.02480703], goal=[1.13056985 0.14303215]
+  Initial distance to goal: 1.210
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 440, in main
+    metrics = evaluate_policy(policy, env, args.n_episodes)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 240, in evaluate_policy
+    action = policy.get_action(obs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 209, in get_action
+    normed_obs = self.normalizer.normalize_observations(observation)
+AttributeError: 'TrajectoryNormalizer' object has no attribute 'normalize_observations'
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 440, in main
+    metrics = evaluate_policy(policy, env, args.n_episodes)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 240, in evaluate_policy
+    action = policy.get_action(obs)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/guides/policies.py", line 209, in get_action
+    normed_obs = self.normalizer.normalize_observations(observation)
+AttributeError: 'TrajectoryNormalizer' object has no attribute 'normalize_observations'

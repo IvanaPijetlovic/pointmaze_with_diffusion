@@ -1,0 +1,29 @@
+============================================================
+Evaluating Diffuser Model
+============================================================
+Checkpoint: logs/D4RL/pointmaze/umaze-v2/checkpoint_step_122700.pt
+Environment: PointMaze_UMaze-v3
+Policy type: guided
+Device: cuda
+============================================================
+✓ Found 'config' in checkpoint
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 361, in main
+    diffusion, normalizer = load_model(args.checkpoint, dataset_name, args.device)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 168, in load_model
+    dataset = SequenceDataset(
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/datasets/sequence.py", line 126, in __init__
+    self.normalizer = TrajectoryNormalizer(self.obs_mean, self.obs_std, self.action_dim)
+AttributeError: 'SequenceDataset' object has no attribute 'obs_mean'
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 361, in main
+    diffusion, normalizer = load_model(args.checkpoint, dataset_name, args.device)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 168, in load_model
+    dataset = SequenceDataset(
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/datasets/sequence.py", line 126, in __init__
+    self.normalizer = TrajectoryNormalizer(self.obs_mean, self.obs_std, self.action_dim)
+AttributeError: 'SequenceDataset' object has no attribute 'obs_mean'

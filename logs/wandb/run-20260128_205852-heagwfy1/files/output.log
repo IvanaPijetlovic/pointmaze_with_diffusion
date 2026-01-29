@@ -1,0 +1,44 @@
+Config saved: logs/D4RL/pointmaze/umaze-v2/config.json
+
+Loading dataset...
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/pybullet_envs/env_bases.py:8: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 493, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 384, in main
+    dataset = SequenceDataset(
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/datasets/sequence.py", line 78, in __init__
+    env = gym.make(env_name)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gym/envs/registration.py", line 676, in make
+    return registry.make(id, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gym/envs/registration.py", line 490, in make
+    versions = self.env_specs.versions(namespace, name)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gym/envs/registration.py", line 220, in versions
+    self._assert_name_exists(namespace, name)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gym/envs/registration.py", line 271, in _assert_name_exists
+    self._assert_namespace_exists(namespace)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gym/envs/registration.py", line 268, in _assert_namespace_exists
+    raise error.NamespaceNotFound(message)
+gym.error.NamespaceNotFound: Namespace `pointmaze` does not exist. Have you installed the proper package for `pointmaze`?
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 493, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 384, in main
+    dataset = SequenceDataset(
+  File "/home/pijet/pointmaze_with_diffusion/scripts/../m_diffuser/datasets/sequence.py", line 78, in __init__
+    env = gym.make(env_name)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gym/envs/registration.py", line 676, in make
+    return registry.make(id, **kwargs)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gym/envs/registration.py", line 490, in make
+    versions = self.env_specs.versions(namespace, name)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gym/envs/registration.py", line 220, in versions
+    self._assert_name_exists(namespace, name)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gym/envs/registration.py", line 271, in _assert_name_exists
+    self._assert_namespace_exists(namespace)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gym/envs/registration.py", line 268, in _assert_namespace_exists
+    raise error.NamespaceNotFound(message)
+gym.error.NamespaceNotFound: Namespace `pointmaze` does not exist. Have you installed the proper package for `pointmaze`?

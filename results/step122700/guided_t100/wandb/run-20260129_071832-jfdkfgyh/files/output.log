@@ -1,0 +1,92 @@
+============================================================
+Evaluating Diffuser Model
+============================================================
+Checkpoint: logs/D4RL/pointmaze/umaze-v2/checkpoint_step_122700.pt
+Environment: PointMaze_UMaze-v3
+Policy type: guided
+Device: cuda
+============================================================
+✓ Found 'config' in checkpoint
+Loading model weights...
+✓ Model loaded successfully!
+
+✓ Using 100 sampling timesteps for inference (trained with 100)
+✓ Created GuidedPolicy
+/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/gymnasium/wrappers/rendering.py:293: UserWarning: [33mWARN: Overwriting existing videos at /home/pijet/pointmaze_with_diffusion/videos/step122700/guided_t100 folder (try specifying a different `video_folder` for the `RecordVideo` wrapper if this is not desired)[0m
+  logger.warn(
+Recording videos to: videos/step122700/guided_t100
+✓ Created environment: PointMaze_UMaze-v3
+
+============================================================
+Running 10 evaluation episodes...
+============================================================
+
+
+Episode 1: start=[ 0.81405682 -1.02480703], goal=[1.13056985 0.14303215]
+  Initial distance to goal: 1.210
+Episode ended: final_distance=0.923, total_reward=466.0
+Distance traveled: start->end = 0.354
+Episode 1: Reward = 466.00, Length = 1000
+
+Episode 2: start=[1.16138081 0.9717071 ], goal=[1.21338249 0.07193256]
+  Initial distance to goal: 0.901
+Episode ended: final_distance=0.878, total_reward=189.0
+Distance traveled: start->end = 1.697
+Episode 2: Reward = 189.00, Length = 1000
+
+Episode 3: start=[0.16381559 1.0658322 ], goal=[ 1.02729239 -0.21809137]
+  Initial distance to goal: 1.547
+Episode ended: final_distance=0.546, total_reward=294.0
+Distance traveled: start->end = 1.900
+Episode 3: Reward = 294.00, Length = 1000
+
+Episode 4: start=[ 0.19656056 -0.86080825], goal=[-0.07273702  1.23534901]
+  Initial distance to goal: 2.113
+Episode ended: final_distance=2.650, total_reward=0.0
+Distance traveled: start->end = 1.093
+Episode 4: Reward = 0.00, Length = 1000
+
+Episode 5: start=[-0.17285525  1.09152448], goal=[-0.0166395  -1.22809812]
+  Initial distance to goal: 2.325
+Episode ended: final_distance=1.230, total_reward=0.0
+Distance traveled: start->end = 1.719
+Episode 5: Reward = 0.00, Length = 1000
+
+Episode 6: start=[-0.06477015 -1.01522209], goal=[ 1.23375487 -1.08708732]
+  Initial distance to goal: 1.301
+Episode ended: final_distance=0.671, total_reward=248.0
+Distance traveled: start->end = 0.681
+Episode 6: Reward = 248.00, Length = 1000
+
+Episode 7: start=[-0.13654533  1.084907  ], goal=[-0.18503925 -1.01214754]
+  Initial distance to goal: 2.098
+Episode ended: final_distance=0.863, total_reward=92.0
+Distance traveled: start->end = 2.390
+Episode 7: Reward = 92.00, Length = 1000
+
+Episode 8: start=[0.90618332 0.1661299 ], goal=[ 1.1663391  -0.89986745]
+  Initial distance to goal: 1.097
+Episode ended: final_distance=0.223, total_reward=466.0
+Distance traveled: start->end = 1.039
+Episode 8: Reward = 466.00, Length = 1000
+
+Episode 9: start=[ 0.09124775 -1.18012376], goal=[ 0.94373919 -0.10583595]
+  Initial distance to goal: 1.371
+Episode ended: final_distance=0.467, total_reward=378.0
+Distance traveled: start->end = 1.832
+Episode 9: Reward = 378.00, Length = 1000
+
+Episode 10: start=[0.08242543 1.10258269], goal=[-0.24631887 -0.85653781]
+  Initial distance to goal: 1.987
+Episode ended: final_distance=1.119, total_reward=113.0
+Distance traveled: start->end = 1.834
+Episode 10: Reward = 113.00, Length = 1000
+
+✓ Results saved to: results/step122700/guided_t100/guided_PointMaze_UMaze_v3_20260129_090708.json
+
+============================================================
+Evaluation Results
+============================================================
+Mean Reward: 224.60 ± 166.62
+Mean Length: 1000.00 ± 0.00
+============================================================

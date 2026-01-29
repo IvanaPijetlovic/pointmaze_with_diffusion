@@ -1,0 +1,84 @@
+Config saved: logs/D4RL/pointmaze/umaze-v2/config.json
+
+Loading dataset...
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/Cython/Distutils/old_build_ext.py:14: DeprecationWarning: dep_util is Deprecated. Use functions from setuptools instead.
+  from distutils.dep_util import newer, newer_group
+
+You appear to be missing MuJoCo.  We expected to find the file here: /home/pijet/.mujoco/mujoco210
+
+This package only provides python bindings, the library must be installed separately.
+
+Please follow the instructions on the README to install MuJoCo
+
+    https://github.com/openai/mujoco-py#install-mujoco
+
+Which can be downloaded from the website
+
+    https://www.roboti.us/index.html
+
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 493, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 384, in main
+    dataset = SequenceDataset(
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/datasets/sequence.py", line 70, in __init__
+    import d4rl  # noqa: F401
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/d4rl/__init__.py", line 14, in <module>
+    import d4rl.locomotion
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/d4rl/locomotion/__init__.py", line 2, in <module>
+    from d4rl.locomotion import ant
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/d4rl/locomotion/ant.py", line 20, in <module>
+    import mujoco_py
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/mujoco_py/__init__.py", line 2, in <module>
+    from mujoco_py.builder import cymj, ignore_mujoco_warnings, functions, MujocoException
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/mujoco_py/builder.py", line 503, in <module>
+    mujoco_path = discover_mujoco()
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/mujoco_py/utils.py", line 78, in discover_mujoco
+    raise Exception(message)
+Exception:
+You appear to be missing MuJoCo.  We expected to find the file here: /home/pijet/.mujoco/mujoco210
+
+This package only provides python bindings, the library must be installed separately.
+
+Please follow the instructions on the README to install MuJoCo
+
+    https://github.com/openai/mujoco-py#install-mujoco
+
+Which can be downloaded from the website
+
+    https://www.roboti.us/index.html
+
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 493, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/train.py", line 384, in main
+    dataset = SequenceDataset(
+  File "/home/pijet/pointmaze_with_diffusion/m_diffuser/datasets/sequence.py", line 70, in __init__
+    import d4rl  # noqa: F401
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/d4rl/__init__.py", line 14, in <module>
+    import d4rl.locomotion
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/d4rl/locomotion/__init__.py", line 2, in <module>
+    from d4rl.locomotion import ant
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/d4rl/locomotion/ant.py", line 20, in <module>
+    import mujoco_py
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/mujoco_py/__init__.py", line 2, in <module>
+    from mujoco_py.builder import cymj, ignore_mujoco_warnings, functions, MujocoException
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/mujoco_py/builder.py", line 503, in <module>
+    mujoco_path = discover_mujoco()
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/mujoco_py/utils.py", line 78, in discover_mujoco
+    raise Exception(message)
+Exception:
+You appear to be missing MuJoCo.  We expected to find the file here: /home/pijet/.mujoco/mujoco210
+
+This package only provides python bindings, the library must be installed separately.
+
+Please follow the instructions on the README to install MuJoCo
+
+    https://github.com/openai/mujoco-py#install-mujoco
+
+Which can be downloaded from the website
+
+    https://www.roboti.us/index.html

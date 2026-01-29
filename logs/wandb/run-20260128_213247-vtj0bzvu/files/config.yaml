@@ -1,0 +1,135 @@
+_wandb:
+    value:
+        cli_version: 0.24.0
+        e:
+            h5wpve2geibte0x2ck2g6xgoasuyg965:
+                args:
+                    - --dataset
+                    - D4RL/pointmaze/umaze-v2
+                    - --horizon
+                    - "32"
+                    - --dim
+                    - "128"
+                    - --dim-mults
+                    - "1"
+                    - "2"
+                    - "4"
+                    - --n-timesteps
+                    - "100"
+                    - --batch-size
+                    - "256"
+                    - --lr
+                    - "6e-4"
+                    - --n-epochs
+                    - "50"
+                    - --gradient-clip
+                    - "5.0"
+                    - --use-ema
+                    - --device
+                    - cuda
+                codePath: scripts/train.py
+                codePathLocal: scripts/train.py
+                cpu_count: 1
+                cpu_count_logical: 1
+                cudaVersion: "12.4"
+                disk:
+                    /:
+                        total: "67387613184"
+                        used: "21242753024"
+                email: ge64liv@mytum.de
+                executable: /home/pijet/miniconda3/envs/dadiff/bin/python
+                git:
+                    commit: 24303dfc0d91ef4119dd48994cc0e9a9c8a13811
+                    remote: https://github.com/IvanaPijetlovic/pointmaze_with_diffusion.git
+                gpu: Tesla T4
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Turing
+                      cudaCores: 2560
+                      memoryTotal: "16106127360"
+                      name: Tesla T4
+                      uuid: GPU-7e829fc3-e806-f100-ac86-d17c33447365
+                host: instance-20260128-151357
+                memory:
+                    total: "3851362304"
+                os: Linux-6.1.0-42-cloud-amd64-x86_64-with-glibc2.36
+                program: /home/pijet/pointmaze_with_diffusion/scripts/train.py
+                python: CPython 3.10.19
+                root: ./logs
+                startedAt: "2026-01-28T21:32:47.779784Z"
+                writerId: h5wpve2geibte0x2ck2g6xgoasuyg965
+        m: []
+        python_version: 3.10.19
+        t:
+            "1":
+                - 1
+                - 105
+            "2":
+                - 1
+                - 105
+            "3":
+                - 13
+                - 16
+            "4": 3.10.19
+            "5": 0.24.0
+            "10":
+                - 20
+            "12": 0.24.0
+            "13": linux-x86_64
+batch_size:
+    value: 256
+beta_schedule:
+    value: cosine
+checkpoint:
+    value: null
+dataset:
+    value: D4RL/pointmaze/umaze-v2
+device:
+    value: cuda
+dim:
+    value: 128
+dim_mults:
+    value:
+        - 1
+        - 2
+        - 4
+dynamics_method:
+    value: data-driven
+ema_decay:
+    value: 0.995
+env:
+    value: PointMaze_UMaze-v3
+eval_freq:
+    value: 5000
+finetune_mode:
+    value: false
+gradient_clip:
+    value: 5
+horizon:
+    value: 32
+log_dir:
+    value: ./logs
+lr:
+    value: 0.0006
+n_epochs:
+    value: 50
+n_timesteps:
+    value: 100
+num_workers:
+    value: 0
+projection_weight:
+    value: 0
+reset_optimizer:
+    value: false
+run_name:
+    value: null
+save_freq:
+    value: 10000
+seed:
+    value: 42
+use_ema:
+    value: true
+value_guidance_weight:
+    value: 0
+warmup_steps:
+    value: 2000

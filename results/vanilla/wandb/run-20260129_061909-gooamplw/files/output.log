@@ -1,0 +1,36 @@
+============================================================
+Evaluating Diffuser Model
+============================================================
+Checkpoint: logs/D4RL/pointmaze/umaze-v2/final_model.pt
+Environment: PointMaze_UMaze-v3
+Policy type: guided
+Device: cuda
+============================================================
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 361, in main
+    diffusion, normalizer = load_model(args.checkpoint, dataset_name, args.device)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 143, in load_model
+    checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/serialization.py", line 1500, in load
+    with _open_file_like(f, "rb") as opened_file:
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/serialization.py", line 768, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/serialization.py", line 749, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+FileNotFoundError: [Errno 2] No such file or directory: 'logs/D4RL/pointmaze/umaze-v2/final_model.pt'
+Traceback (most recent call last):
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 464, in <module>
+    main()
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 361, in main
+    diffusion, normalizer = load_model(args.checkpoint, dataset_name, args.device)
+  File "/home/pijet/pointmaze_with_diffusion/scripts/evaluate.py", line 143, in load_model
+    checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/serialization.py", line 1500, in load
+    with _open_file_like(f, "rb") as opened_file:
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/serialization.py", line 768, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/pijet/miniconda3/envs/dadiff/lib/python3.10/site-packages/torch/serialization.py", line 749, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+FileNotFoundError: [Errno 2] No such file or directory: 'logs/D4RL/pointmaze/umaze-v2/final_model.pt'

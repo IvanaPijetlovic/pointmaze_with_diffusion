@@ -40,19 +40,19 @@ venv.bak/
 *.ipynb
 
 # Data and logs
-logs/
-data/
-datasets/
+#logs/
+#data/
+#datasets/
 *.pkl
 *.pt
 *.pth
-*.h5
-*.hdf5
-wandb/
-runs/
+#*.h5
+#*.hdf5
+#wandb/
+#runs/
 
 # Minari datasets
-~/.minari/
+#~/.minari/
 
 # OS
 .DS_Store
@@ -79,8 +79,8 @@ checkpoints/
 *.ckpt
 
 # Videos and renders
-videos/
-renders/
-*.mp4
-*.avi
-*.gif
+#videos/
+#renders/
+#*.mp4
+#*.avi
+#*.gif

@@ -1,0 +1,33 @@
+{
+    "dataset": "pointmaze/umaze-v2",
+    "horizon": 32,
+    "dim": 128,
+    "dim_mults": [
+        1,
+        2,
+        4
+    ],
+    "n_timesteps": 100,
+    "beta_schedule": "cosine",
+    "n_epochs": 50,
+    "batch_size": 256,
+    "lr": 0.0006,
+    "warmup_steps": 2000,
+    "gradient_clip": 5.0,
+    "checkpoint": null,
+    "reset_optimizer": false,
+    "finetune_mode": false,
+    "projection_weight": 0.0,
+    "value_guidance_weight": 0.0,
+    "env": "PointMaze_UMaze-v3",
+    "dynamics_method": "data-driven",
+    "use_ema": true,
+    "ema_decay": 0.995,
+    "log_dir": "./logs",
+    "save_freq": 10000,
+    "eval_freq": 5000,
+    "run_name": null,
+    "device": "cuda",
+    "num_workers": 0,
+    "seed": 42
+}
