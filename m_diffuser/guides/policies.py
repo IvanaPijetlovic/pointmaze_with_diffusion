@@ -149,34 +149,37 @@ class GuidedPolicy(nn.Module):
         return x
     
     def _process_observation(self, observation):
-        """Handle dict observations and convert to array."""
+        """Convert env observation to the vector format used by the model.
+
+        For PointMaze (Gymnasium robotics), observations are dicts with keys:
+          - 'observation' (state features)
+          - 'desired_goal'
+          - 'achieved_goal'
+
+        During training we used the concatenation:
+          [observation, desired_goal, achieved_goal]  -> dim 8 in your run.
+        """
+        import numpy as np
+
         if isinstance(observation, dict):
-            if 'observation' in observation and 'desired_goal' in observation:
-                obs_state = observation['observation']
-                obs_goal = observation['desired_goal']
-                
-                # Check what dimension the model expects
-                expected_dim = self.normalizer.obs_mean.shape[0]
-                state_dim = len(obs_state)
-                goal_dim = len(obs_goal)
-                
-                if expected_dim == state_dim + goal_dim:
-                    # Model was trained with goal-conditioned observations
-                    observation = np.concatenate([obs_state, obs_goal])
-                else:
-                    # Model was trained with state-only observations (no goal)
-                    observation = obs_state
-            elif 'observation' in observation:
-                observation = observation['observation']
-            elif 'achieved_goal' in observation:
-                observation = observation['achieved_goal']
-            else:
-                observation = np.concatenate([v.flatten() for v in observation.values()])
-        
-        if not isinstance(observation, np.ndarray):
-            observation = np.array(observation)
-        
-        return observation.reshape(1, -1)
+            obs_vec = observation.get('observation', None)
+            dg = observation.get('desired_goal', None)
+            ag = observation.get('achieved_goal', None)
+
+            parts = []
+            if obs_vec is not None: parts.append(np.asarray(obs_vec))
+            if dg is not None: parts.append(np.asarray(dg))
+            if ag is not None: parts.append(np.asarray(ag))
+
+            if parts:
+                return np.concatenate(parts, axis=-1)
+
+            # fallback: concatenate all dict values deterministically
+            parts = [np.asarray(observation[k]) for k in sorted(observation.keys())]
+            return np.concatenate(parts, axis=-1)
+
+        return observation
+
     
     def _fill_action_buffer(self, trajectory):
         """Extract actions from trajectory and fill buffer."""

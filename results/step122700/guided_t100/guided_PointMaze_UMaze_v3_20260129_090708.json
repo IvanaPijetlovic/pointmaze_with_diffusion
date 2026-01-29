@@ -1,0 +1,40 @@
+{
+  "policy_type": "guided",
+  "environment": "PointMaze_UMaze-v3",
+  "checkpoint": "logs/D4RL/pointmaze/umaze-v2/checkpoint_step_122700.pt",
+  "dataset": "D4RL/pointmaze/umaze-v2",
+  "n_episodes": 10,
+  "sampling_timesteps": 100,
+  "seed": 42,
+  "timestamp": "20260129_090708",
+  "metrics": {
+    "mean_reward": 224.6,
+    "std_reward": 166.6248480869525,
+    "mean_length": 1000.0,
+    "std_length": 0.0,
+    "episode_rewards": [
+      466.0,
+      189.0,
+      294.0,
+      0.0,
+      0.0,
+      248.0,
+      92.0,
+      466.0,
+      378.0,
+      113.0
+    ],
+    "episode_lengths": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ]
+  }
+}

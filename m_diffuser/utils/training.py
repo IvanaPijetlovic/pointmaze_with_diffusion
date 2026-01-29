@@ -78,7 +78,7 @@ class Trainer:
                  ema_decay=0.995,
                  gradient_clip=1.0,
                  loss_fn=None,           # NEW: Custom loss function
-                 loss_names=None):       # NEW: Names for logging
+                 loss_names=None, wandb_run=None ):       # NEW: Names for logging
         
         self.model = model
         self.optimizer = optimizer
@@ -90,6 +90,7 @@ class Trainer:
         self.eval_freq = eval_freq
         self.use_ema = use_ema
         self.gradient_clip = gradient_clip
+        self.wandb_run=wandb_run
         
         # NEW: Custom loss function
         self.loss_fn = loss_fn
@@ -223,7 +224,8 @@ class Trainer:
         
         return save_path
     
-    def train(self, n_epochs, start_epoch=0):
+    def train(self, n_epochs, start_epoch=0, **kwargs):
+        _yield_metrics = kwargs.get('yield_metrics', False) if 'kwargs' in locals() else False
         """Main training loop."""
         from tqdm import tqdm
         

@@ -9,7 +9,6 @@ __version__ = "0.1.0"
 
 from m_diffuser.models.temporal_unet import TemporalUnet
 from m_diffuser.models.diffusion import GaussianDiffusion
-from m_diffuser.datasets.sequence import SequenceDataset
 from m_diffuser.guides.policies import GuidedPolicy, MPCPolicy
 from m_diffuser.utils.training import Trainer
 
